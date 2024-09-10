@@ -86,14 +86,31 @@ public class BigFraction {
    *   The fraction in string form
    */
   public BigFraction(String str) {
-    this.num = DEFAULT_NUMERATOR;
-    this.denom = DEFAULT_DENOMINATOR;
+    String[] ators = str.split("/");
+    this.num = new BigInteger(ators[0]);
+    this.denom = new BigInteger(ators[1]);
   } // BigFraction
 
   // +---------+------------------------------------------------------
   // | Methods |
   // +---------+
 
+  /**
+   * Multiplies two fractions.
+   *
+   * @return the fractions multiplied together.
+   */
+  public BigFraction fractional() {
+    return new BigFraction(this.num.mod(this.denom),this.denom);
+  }
+  public BigFraction multiply(BigFraction multiplier) {
+    BigInteger resultNum;
+    BigInteger resultDen;
+
+    resultDen = this.denom.multiply(multiplier.denom);
+    resultNum = this.num.multiply(multiplier.num);
+    return new BigFraction(resultNum, resultDen);
+  }
   /**
    * Express this fraction as a double.
    *

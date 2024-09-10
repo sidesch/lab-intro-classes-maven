@@ -4,9 +4,9 @@ Some explorations with the basics of classes in Java
 
 ---
 
-YOUR NAMES HERE
+Sarah Deschamps, Paden Houck
 
-We got through Exercise: ###
+We got through Exercise: 7
 
 ACKNOWLEDGEMENTS
 
